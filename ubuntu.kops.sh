@@ -15,8 +15,7 @@ chmod +x kops-linux-amd64 kubectl
 mv kubectl /usr/local/bin/kubectl
 mv kops-linux-amd64 /usr/local/bin/kops
 
-aws s3api create-bucket --bucket deploysscloudanddevopsbyraham007899123mnbvcxz.k8s.local --region us-east-1
-aws s3api put-bucket-versioning --bucket deploysscloudanddevopsbyraham007899123mnbvcxz.k8s.local --region us-east-1 --versioning-configuration Status=Enabled
-export KOPS_STATE_STORE=s3://deploysscloudanddevopsbyraham007899123mnbvcxz.k8s.local
-kops create cluster --name rahamss.k8s.local --zones us-east-1a --control-plane-image ami-0360c520857e3138f --control-plane-count=1 --control-plane-size t2.large --image ami-0360c520857e3138f --node-count=2 --node-size t2.medium
-kops update cluster --name rahams.k8s.local --yes --admin
+#based on server region take the region ubuntu ami id and it will work
+export KOPS_STATE_STORE=s3://vhsveeuvervuvebyr-565467.k8s.local
+kops create cluster --name rahamss.k8s.local --zones us-east-1b --control-plane-image ami-0ecb62995f68bb549  --control-plane-count=1 --control-plane-size c7i-flex.large --image ami-0ecb62995f68bb549  --node-count=2 --node-size c7i-flex.large
+kops update cluster --name rahamss.k8s.local --yes --admin
