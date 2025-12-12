@@ -19,3 +19,7 @@ mv kops-linux-amd64 /usr/local/bin/kops
 export KOPS_STATE_STORE=s3://vhsveeuvervuvebyr-565467.k8s.local
 kops create cluster --name rahamss.k8s.local --zones us-east-1b --control-plane-image ami-0ecb62995f68bb549  --control-plane-count=1 --control-plane-size c7i-flex.large --image ami-0ecb62995f68bb549  --node-count=2 --node-size c7i-flex.large
 kops update cluster --name rahamss.k8s.local --yes --admin
+
+
+# if u get error lastly like validation failed: State Store: Required value.
+#pls execute one more time that export cmd
